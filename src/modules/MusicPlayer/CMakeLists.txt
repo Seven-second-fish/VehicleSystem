@@ -3,7 +3,7 @@
 add_library(MusicPlayer
     MusicController.cpp
     MusicController.h
-    Music.qml
+    # Music.qml
     resources.qrc
 )
 

@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>main2.qml</file>
+        <file>modules/MusicPlayer/Music.qml</file>
     </qresource>
-</RCC> 
+</RCC>

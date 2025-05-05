@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	engine.rootContext()->setContextProperty("settingsController", &settingsController);
 	engine.rootContext()->setContextProperty("vehicleInfoController", &vehicleInfoController);
 
-	const QUrl url(u"qrc:/main.qml"_qs);
+    const QUrl url(u"qrc:/main.qml"_qs);
 	QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
 					 &app, [url](QObject *obj, const QUrl &objUrl) {
 		if (!obj && url == objUrl)
