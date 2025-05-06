@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+// import MusicPlayer 1.0 as music
 
 Window {
     visible: true

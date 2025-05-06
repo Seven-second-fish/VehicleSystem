@@ -1,0 +1,78 @@
+.
+├── build
+│   └── Desktop_Qt_6_8_3-Debug
+│       ├── bin
+│       │   └── VehicleSystem
+│       ├── CMakeCache.txt
+│       ├── CMakeFiles
+│       │   ├── 3.28.3
+│       │   ├── all_aotstats.dir
+│       │   ├── cmake.check_cache
+│       │   ├── CMakeConfigureLog.yaml
+│       │   ├── CMakeDirectoryInformation.cmake
+│       │   ├── CMakeRuleHashes.txt
+│       │   ├── CMakeScratch
+│       │   ├── Makefile2
+│       │   ├── Makefile.cmake
+│       │   ├── module_MainPage_aotstats_target.dir
+│       │   ├── module_MusicPlayer_aotstats_target.dir
+│       │   ├── pkgRedirects
+│       │   ├── progress.marks
+│       │   └── TargetDirectories.txt
+│       ├── cmake_install.cmake
+│       ├── lib
+│       │   ├── libCore.so
+│       │   ├── libMainPage.so
+│       │   ├── libMusicPlayer.so
+│       │   ├── libNavigation.a
+│       │   ├── libSettings.a
+│       │   └── libVehicleInfo.a
+│       ├── Makefile
+│       ├── qtcsettings.cmake
+│       ├── src
+│       │   ├── app
+│       │   ├── CMakeFiles
+│       │   ├── cmake_install.cmake
+│       │   ├── Makefile
+│       │   └── modules
+│       └── Testing
+│           └── Temporary
+├── CMakeLists.txt
+├── project_structure.txt
+├── README.md
+└── src
+    ├── app
+    │   ├── CMakeLists.txt
+    │   └── main.cpp
+    ├── CMakeLists.txt
+    ├── modules
+    │   ├── CMakeLists.txt
+    │   ├── Core
+    │   │   ├── CMakeLists.txt
+    │   │   ├── CoreController.cpp
+    │   │   └── CoreController.h
+    │   ├── MainPage
+    │   │   ├── CMakeLists.txt
+    │   │   ├── Main2.qml
+    │   │   └── Main.qml
+    │   ├── MusicPlayer
+    │   │   ├── CMakeLists.txt
+    │   │   ├── MusicController.cpp
+    │   │   ├── MusicController.h
+    │   │   ├── MusicPlayer.qml
+    │   │   └── resources.qrc
+    │   ├── Navigation
+    │   │   ├── CMakeLists.txt
+    │   │   ├── NavigationController.cpp
+    │   │   └── NavigationController.h
+    │   ├── Settings
+    │   │   ├── CMakeLists.txt
+    │   │   ├── SettingsController.cpp
+    │   │   └── SettingsController.h
+    │   └── VehicleInfo
+    │       ├── CMakeLists.txt
+    │       ├── VehicleInfoController.cpp
+    │       └── VehicleInfoController.h
+    └── resources.qrc
+
+27 directories, 49 files

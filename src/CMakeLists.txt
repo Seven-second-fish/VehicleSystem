@@ -16,13 +16,8 @@ find_package(Qt6 COMPONENTS
     Positioning
     REQUIRED
 )
-
+add_subdirectory(app)
 add_subdirectory(modules)
-
-add_executable(${PROJECT_NAME}
-    main.cpp
-    resources.qrc
-)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Core
@@ -30,9 +25,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Quick
     Qt6::Multimedia
     Qt6::Positioning
-    Core
-    MusicPlayer
-    Navigation
-    Settings
-    VehicleInfo
 )
