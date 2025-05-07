@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QDebug>
+#include <QQuickItem>
 #include "../modules/Core/CoreController.h"
 #include "../modules/MusicPlayer/MusicController.h"
 #include "../modules/Navigation/NavigationController.h"
@@ -24,6 +25,12 @@ int main(int argc, char *argv[])
 
 	// 启动车辆信息监控
 	vehicleInfoController.startMonitoring();
+
+	// 注册 QML 类型
+	qmlRegisterType<QQuickItem>("MusicPlayer", 1, 0, "MusicView");
+	qmlRegisterType<QQuickItem>("Settings", 1, 0, "SettingsView");
+	qmlRegisterType<QQuickItem>("VehicleInfo", 1, 0, "VehicleInfoView");
+	qmlRegisterType<QQuickItem>("Navigation", 1, 0, "NavigationView");
 
 	QQmlApplicationEngine engine;
 

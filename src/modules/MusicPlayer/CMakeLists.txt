@@ -4,7 +4,7 @@ qt_add_qml_module(MusicPlayer
     URI MusicPlayer
     VERSION 1.0
     QML_FILES
-        MusicPlayer.qml
+        MusicPlayerView.qml
     SOURCES
         MusicController.cpp
         MusicController.h

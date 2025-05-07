@@ -1,13 +1,19 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-// import MusicPlayer 1.0 as music
+import MusicPlayer 1.0
+import Settings 1.0
+import VehicleInfo 1.0
+import Navigation 1.0
 
 Window {
     visible: true
     width: 800
     height: 480
     title: "Vehicle System"
+
+    // 使用设置控制器的主题
+    color: settingsController.darkMode ? "#2c2c2c" : "#f0f0f0"
 
     // 全屏加载页面用的 Loader（在最顶层）
     Loader {
@@ -16,66 +22,56 @@ Window {
         z: 999 // 保证覆盖整个界面
     }
 
+    MusicView{
+
+    }
+
+    NavigationView{
+
+    }
+
     Row {
         anchors.fill: parent
 
-        // 左侧 StackView：用于页面切换
-        StackView {
-            id: stackView
-            width: 236
+        // 左侧导航栏
+        Column {
+            width: 200
             height: parent.height
-            initialItem: startPage
-        }
+            spacing: 10
+            padding: 10
 
-        // 右侧区域（可空着或用于显示其他模块）
-        Rectangle {
-            width: parent.width - stackView.width
-            height: parent.height
-            color: "#f0f0f0"
-        }
-    }
-
-    // 首页面，按钮在这个页面里
-    Component {
-        id: startPage
-        Item {
-            width: stackView.width
-            height: 600
-            Column{
-                width: stackView.width
-                height: 600
-                spacing: 10
-
-                Button{
-                    width: parent.width
-                    height: 30
-                    text: "music"
-                    onClicked: {
-                        // var component = Qt.createComponent("modules/MusicPlayer/Music.qml");
-                        // console.log(component.status === Component.Ready)
-                        // if (component.status === Component.Ready) {
-                        //     // var page = component.createObject(stackView, { width: stackView.parent.width, height: stackView.height });
-                        //     // stackView.replace(page);
-                        //     stackView.replace(component)
-                        // }
-                        fullscreenLoader.source = "modules/MusicPlayer/Music.qml"
-                    }
-                }
-                Button{
-                    width: parent.width
-                    height: 30
-                    text: "setting"
-                    onClicked: stackView.push("modules/MusicPlayer/Music.qml")
-                }
-                Button{
-                    width: parent.width
-                    height: 30
-                    text: "video"
-                    onClicked: stackView.push("modules/MusicPlayer/Music.qml")
-                }
+            // 导航按钮
+            Button {
+                width: parent.width
+                text: "Music"
+                onClicked: stackView.replace("qrc:/modules/MusicPlayer/MusicView.qml")
             }
 
+            Button {
+                width: parent.width
+                text: "Settings"
+                onClicked: stackView.replace("qrc:/modules/Settings/SettingsView.qml")
+            }
 
+            Button {
+                width: parent.width
+                text: "Vehicle Info"
+                onClicked: stackView.replace("qrc:/modules/VehicleInfo/VehicleInfoView.qml")
+            }
+
+            Button {
+                width: parent.width
+                text: "Navigation"
+                onClicked: stackView.replace("qrc:/modules/Navigation/NavigationView.qml")
+            }
+        }
+
+        // 右侧内容区域
+        StackView {
+            id: stackView
+            width: parent.width - 200
+            height: parent.height
+            initialItem: "qrc:/modules/MusicPlayer/MusicView.qml"
         }
     }
 }
