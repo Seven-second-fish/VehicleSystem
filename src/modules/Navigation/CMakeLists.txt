@@ -15,4 +15,5 @@ target_link_libraries(Navigation PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    Qt6::Positioning
 ) 
