@@ -16,20 +16,13 @@ find_package(Qt6 COMPONENTS
     Positioning
     REQUIRED
 )
-
-# 添加所有模块
+add_subdirectory(app)
 add_subdirectory(modules)
 
-# 添加主应用程序
-add_subdirectory(app)
-
-# 设置 QML 导入路径
-target_compile_definitions(${PROJECT_NAME} PRIVATE
-    QML_IMPORT_PATH="${CMAKE_BINARY_DIR}/lib/qml"
-)
-
-# 设置包含路径
-target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/modules
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Quick
+    Qt6::Multimedia
+    Qt6::Positioning
 )

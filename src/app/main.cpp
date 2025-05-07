@@ -36,23 +36,22 @@ int main(int argc, char *argv[])
 
     qDebug()<<"start scanning";
 
-    // 添加 QML 导入路径
-    engine.addImportPath(QCoreApplication::applicationDirPath() + "/../lib/qml");
-    engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
+    // engine.addImportPath(QCoreApplication::applicationDirPath() + "/../lib/qml");
 
-    // 尝试加载 QML 文件
-    const QUrl url(QStringLiteral("qrc:/MainPage/Main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
+    engine.loadFromModule("MainPage", "Main");
 
     if (engine.rootObjects().isEmpty()) {
         qWarning() << "QML module MainPage.Main failed to load!";
         return -1;
     }
+
+    // const QUrl url(u"qrc:/main.qml"_qs);
+    // QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+    //                  &app, [url](QObject *obj, const QUrl &objUrl) {
+    //     if (!obj && url == objUrl)
+    //         QCoreApplication::exit(-1);
+    // }, Qt::QueuedConnection);
+    // engine.load(url);
 
 	return app.exec();
 }

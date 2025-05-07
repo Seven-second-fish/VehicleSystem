@@ -51,22 +51,31 @@ Window {
                     height: 30
                     text: "music"
                     onClicked: {
-                        fullscreenLoader.source = "MusicPlayer/MusicPlayer.qml"
+                        // var component = Qt.createComponent("modules/MusicPlayer/Music.qml");
+                        // console.log(component.status === Component.Ready)
+                        // if (component.status === Component.Ready) {
+                        //     // var page = component.createObject(stackView, { width: stackView.parent.width, height: stackView.height });
+                        //     // stackView.replace(page);
+                        //     stackView.replace(component)
+                        // }
+                        fullscreenLoader.source = "modules/MusicPlayer/Music.qml"
                     }
                 }
                 Button{
                     width: parent.width
                     height: 30
                     text: "setting"
-                    onClicked: stackView.push("MusicPlayer/MusicPlayer.qml")
+                    onClicked: stackView.push("modules/MusicPlayer/Music.qml")
                 }
                 Button{
                     width: parent.width
                     height: 30
                     text: "video"
-                    onClicked: stackView.push("MusicPlayer/MusicPlayer.qml")
+                    onClicked: stackView.push("modules/MusicPlayer/Music.qml")
                 }
             }
+
+
         }
     }
 }
