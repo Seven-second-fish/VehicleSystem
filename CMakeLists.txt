@@ -30,5 +30,5 @@ include_directories(${Qt6Core_INCLUDE_DIRS}
                   ${Qt6Quick_INCLUDE_DIRS}
                   ${Qt6Qml_INCLUDE_DIRS}
                   ${Qt6Multimedia_INCLUDE_DIRS})
-
+ 
 add_subdirectory(src)

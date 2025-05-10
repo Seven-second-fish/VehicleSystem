@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QString>
-#include <QGeoCoordinate>
+// #include <QGeoCoordinate>
 
 class NavigationController : public QObject
 {
@@ -41,4 +41,4 @@ private:
     QGeoCoordinate m_currentCoordinate;
 };
 
-#endif // NAVIGATIONCONTROLLER_H 
+#endif // NAVIGATIONCONTROLLER_H
