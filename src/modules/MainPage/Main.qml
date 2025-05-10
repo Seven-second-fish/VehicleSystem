@@ -6,7 +6,7 @@ import Settings 1.0
 import VehicleInfo 1.0
 import Navigation 1.0
 
-Window {
+Main {
     visible: true
     width: 800
     height: 480

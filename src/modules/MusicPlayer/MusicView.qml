@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import MusicPlayer 1.0
 
-MusicView {
+Item {
     id: root
     anchors.fill: parent
 
